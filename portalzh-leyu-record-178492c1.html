@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · 乐鱼体育</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #fafafa;
+            color: #1d2b3a;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3.2rem 1.5rem 4rem;
+        }
+        /* 非常克制的装饰线 */
+        .rule-light {
+            width: 3.2rem;
+            height: 2px;
+            background: #d0d9e2;
+            margin: 2.2rem 0 1.8rem;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #0b1a26;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #5e6f7e;
+            border-left: 3px solid #b5c4d0;
+            padding-left: 1rem;
+            margin-bottom: 2.2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 520;
+            margin: 2rem 0 0.6rem;
+            color: #152b3b;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 520;
+            margin: 1.6rem 0 0.4rem;
+            color: #1e3a4f;
+        }
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.975rem;
+            color: #2d3e4e;
+        }
+        a {
+            color: #1e5a7a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s;
+        }
+        a:hover {
+            border-bottom-color: #1e5a7a;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.6rem 0 1.2rem;
+        }
+        .card-item {
+            background: #ffffff;
+            border: 1px solid #e6ecf1;
+            padding: 1.2rem 1.4rem;
+            flex: 1 1 180px;
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .card-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #7b8b9a;
+            margin-bottom: 0.2rem;
+        }
+        .card-item .value {
+            font-weight: 470;
+            font-size: 1.1rem;
+            color: #102433;
+        }
+        .faq-item {
+            margin: 1.2rem 0;
+            padding-left: 0.4rem;
+            border-left: 2px solid #dfe7ed;
+            padding-left: 1rem;
+        }
+        .faq-q {
+            font-weight: 510;
+            color: #1a3143;
+        }
+        .faq-a {
+            margin-top: 0.2rem;
+            font-size: 0.94rem;
+            color: #3b5265;
+        }
+        .note-box {
+            background: #f2f6f9;
+            border-radius: 6px;
+            padding: 1rem 1.3rem;
+            margin: 1.8rem 0 1rem;
+            border-left: 4px solid #bcccd9;
+        }
+        .small-meta {
+            font-size: 0.85rem;
+            color: #5f7384;
+            margin-top: 0.3rem;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e0e7ed;
+            margin: 2rem 0;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #5f6f7c;
+            border-top: 1px solid #e2e9ef;
+            padding-top: 1.6rem;
+        }
+        @media (max-width: 480px) {
+            .container { padding: 2rem 1.2rem; }
+            h1 { font-size: 1.7rem; }
+            .card-item { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>乐鱼体育 · 信息索引</h1>
+    <div class="subhead">基于公开资料的整理 · 平台档案与使用背景</div>
+
+    <p>
+        本文档为对 <a href="https://portalzh-leyu.com.cn">乐鱼体育</a> 相关公开信息所做的结构性整理，内容聚焦于产品功能、场景覆盖与常见问题摘要，以便快速建立对该平台的基础认知。
+    </p>
+
+    <div class="rule-light"></div>
+
+    <!-- 摘要卡片 -->
+    <h2>平台摘要</h2>
+    <div class="card-grid">
+        <div class="card-item">
+            <div class="label">类别</div>
+            <div class="value">体育 · 数据</div>
+        </div>
+        <div class="card-item">
+            <div class="label">主要领域</div>
+            <div class="value">赛事资讯 · 内容聚合</div>
+        </div>
+        <div class="card-item">
+            <div class="label">内容形态</div>
+            <div class="value">信息面板 · 动态列表</div>
+        </div>
+    </div>
+
+    <!-- 亮点与特点，用短段落 -->
+    <h2>功能亮点</h2>
+    <p>
+        平台以体育相关内容为主线，整合多维度的赛事信息与数据呈现。界面突出结构化展示，将赛程、队伍、统计等模块分离，便于快速查阅。页面布局强调信息层级，减少无关干扰。
+    </p>
+    <p>
+        从资料整理的角度看，<a href="https://portalzh-leyu.com.cn">乐鱼体育</a> 在内容编排上倾向于将时效性信息（如近期赛事、比分变动）置于较高优先级，同时保留历史数据查阅入口，兼顾追踪与回溯。
+    </p>
+
+    <!-- 使用场景与建议 -->
+    <h2>使用场景</h2>
+    <div class="card-grid" style="margin-top: 0.2rem;">
+        <div class="card-item">
+            <div class="label">场景一</div>
+            <div class="value" style="font-weight:400; font-size:0.95rem;">赛中快速翻阅比分变动与赛程安排</div>
+        </div>
+        <div class="card-item">
+            <div class="label">场景二</div>
+            <div class="value" style="font-weight:400; font-size:0.95rem;">赛后数据统计与队伍信息对比</div>
+        </div>
+        <div class="card-item">
+            <div class="label">场景三</div>
+            <div class="value" style="font-weight:400; font-size:0.95rem;">日常浏览多项目赛事日程</div>
+        </div>
+    </div>
+    <p class="small-meta">以上场景基于平台现有功能模块推测，实际体验可能因版本调整而不同。</p>
+
+    <h3>整理建议</h3>
+    <p>
+        若需系统性使用该平台信息，建议先熟悉其导航结构与筛选逻辑。平台通常将主流联赛与项目置于首屏，次级联赛则通过分类入口访问。可定期查看更新时段，以获得较完整的赛事序列。
+    </p>
+
+    <!-- FAQ 摘要 克制风格 -->
+    <h2>常见问题摘要</h2>
+    <div class="faq-item">
+        <div class="faq-q">平台是否提供历史赛事数据回溯？</div>
+        <div class="faq-a">根据现有界面布局，平台在部分项目下保留历史场次列表与结果记录，归档深度因赛事类别而异。</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">信息更新频率如何？</div>
+        <div class="faq-a">实时赛事数据通常伴随比赛进程刷新，赛前信息（赛程、队伍名单）则按官方公布节奏同步，无固定间隔。</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">是否需要注册才能浏览？</div>
+        <div class="faq-a">平台核心内容（赛事列表、基础数据）在未登录状态下可查阅，部分个性化功能可能需要账户支持。具体以实际页面展示为准。</div>
+    </div>
+
+    <!-- 提示板块，克制的说明 -->
+    <div class="note-box">
+        <strong style="font-weight:520;">使用提示</strong><br>
+        本页所呈现内容均基于公开可观察的界面与功能描述，不构成对任何服务或数据的保证。平台结构可能随版本迭代调整，建议以实际页面信息为准。如需直接浏览，可访问 <a href="https://portalzh-leyu.com.cn">乐鱼体育</a> 查看当前内容。
+    </div>
+
+    <!-- 可控的资料说明 -->
+    <hr>
+    <p style="font-size:0.9rem; color:#4d6273;">
+        本文档仅作为信息索引与功能介绍，不涉及任何违规、诱导或承诺性表述。所有引用均基于平台自身呈现的内容范畴。
+    </p>
+
+    <div class="footer-note">
+        <span style="display:block; margin-bottom:0.2rem;">资料整理 · 参考日期 2025</span>
+        <span style="font-size:0.8rem; color:#7b8b9a;">页面内容仅供信息参考，不构成推荐或保证。</span>
+    </div>
+
+</div>
+</body>
+</html>
