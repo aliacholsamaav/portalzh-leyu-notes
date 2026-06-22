@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>澳客官方网 · 资料索引与信息聚合</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background: #f0f6f8;
+            color: #1b2b2c;
+            line-height: 1.6;
+            padding: 0 16px 40px;
+            min-height: 100vh;
+        }
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        /* hero 区 */
+        .hero {
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-weight: 500;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            color: #144c52;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #1f6d6f 0%, #2a9d8f 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #3b5b5c;
+            font-size: 1.05rem;
+            background: #e6f2f1;
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 40px;
+            backdrop-filter: blur(1px);
+            box-shadow: 0 1px 4px rgba(0, 40, 40, 0.04);
+        }
+        /* 网格卡片 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 40px 0 32px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px 22px 22px;
+            box-shadow: 0 4px 12px rgba(36, 84, 82, 0.06);
+            transition: transform 0.18s ease, box-shadow 0.2s;
+            border: 1px solid #d9eae9;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(25, 75, 72, 0.08);
+            border-color: #9cc5c2;
+        }
+        .card-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-bottom: 14px;
+            color: #1e7b78;
+        }
+        .card h3 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #104a4b;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #2d4d4b;
+            flex: 1;
+        }
+        .card .meta-tag {
+            background: #e1f0ef;
+            align-self: flex-start;
+            padding: 3px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            color: #1a6763;
+            margin-top: 16px;
+            font-weight: 450;
+        }
+        /* 使用场景区块 */
+        .scene-section {
+            background: #ffffffde;
+            backdrop-filter: blur(1px);
+            border-radius: 28px;
+            padding: 28px 26px;
+            margin: 20px 0 32px;
+            border: 1px solid #d3e4e1;
+            box-shadow: 0 2px 8px rgba(34, 70, 68, 0.03);
+        }
+        .scene-section h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: #115658;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .scene-section h2 span {
+            font-size: 1.9rem;
+            line-height: 1;
+        }
+        .scene-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+        }
+        .scene-list li {
+            background: #f0faf9;
+            padding: 8px 22px 8px 18px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #1f5756;
+            border-left: 4px solid #2b9b91;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.01);
+        }
+        .scene-list li::before {
+            content: "·";
+            font-weight: 700;
+            margin-right: 8px;
+            color: #21837c;
+        }
+        /* 提示 / FAQ 摘要 */
+        .tip-box {
+            background: #f6fcfb;
+            border-radius: 24px;
+            padding: 24px 26px;
+            margin: 28px 0 20px;
+            border-left: 6px solid #2e9b92;
+            border-right: 1px solid #cee3e0;
+            box-shadow: 0 1px 4px rgba(42, 110, 104, 0.02);
+        }
+        .tip-box h3 {
+            font-weight: 450;
+            font-size: 1.2rem;
+            color: #0b4b47;
+            margin-bottom: 14px;
+        }
+        .tip-box details {
+            margin: 10px 0;
+            padding: 6px 0;
+            border-bottom: 1px dashed #c1dbd7;
+        }
+        .tip-box details:last-of-type {
+            border-bottom: none;
+        }
+        .tip-box summary {
+            font-weight: 450;
+            color: #1f5f5b;
+            cursor: pointer;
+            padding: 6px 0;
+            letter-spacing: 0.2px;
+        }
+        .tip-box .faq-answer {
+            color: #2f4c49;
+            padding: 10px 0 4px 16px;
+            font-size: 0.94rem;
+        }
+        /* 链接嵌入句 */
+        .inline-link-sentence {
+            margin: 18px 0 24px;
+            background: #e3f0ed;
+            padding: 16px 22px;
+            border-radius: 48px;
+            font-size: 1rem;
+            color: #1b4543;
+            display: inline-block;
+            max-width: 100%;
+        }
+        .inline-link-sentence a {
+            color: #0d6460;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid #56a59d;
+            transition: border-color 0.15s;
+        }
+        .inline-link-sentence a:hover {
+            border-bottom-color: #0f4d49;
+        }
+        /* 页脚 */
+        .footer-note {
+            margin-top: 48px;
+            padding: 20px 0 10px;
+            border-top: 1px solid #caddda;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #4f6f6b;
+        }
+        /* 移动端微调 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+                padding: 6px 18px;
+            }
+            .grid {
+                gap: 18px;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .scene-section {
+                padding: 22px 16px;
+            }
+            .tip-box {
+                padding: 18px 16px;
+            }
+            .inline-link-sentence {
+                font-size: 0.95rem;
+                padding: 14px 18px;
+            }
+        }
+        @media (max-width: 400px) {
+            .scene-list li {
+                font-size: 0.88rem;
+                padding: 6px 14px 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero 区 -->
+        <header class="hero">
+            <h1>📋 资料索引 · 信息聚合</h1>
+            <p>以整理为线索，以清晰为尺度</p>
+        </header>
+
+        <!-- 网格卡片：亮点与特点 -->
+        <div class="grid">
+            <article class="card">
+                <div class="card-icon">🧩</div>
+                <h3>结构化归档</h3>
+                <p>页面布局与分类经过反复梳理，数据字段、比赛序列、参考指标都按逻辑归类，便于快速定位。</p>
+                <span class="meta-tag">简洁 · 可溯源</span>
+            </article>
+            <article class="card">
+                <div class="card-icon">🔍</div>
+                <h3>低噪浏览</h3>
+                <p>弱化非必要弹窗与跳转，内容以卡片、表格、折叠信息呈现，阅读节奏由你掌控。</p>
+                <span class="meta-tag">克制 · 聚焦</span>
+            </article>
+            <article class="card">
+                <div class="card-icon">📌</div>
+                <h3>跨终端适应</h3>
+                <p>从宽屏到手机，信息层级自动重组。每个页面保留核心索引功能，不因设备缩小而丢失关键内容。</p>
+                <span class="meta-tag">响应式 · 连贯</span>
+            </article>
+            <article class="card">
+                <div class="card-icon">⚖️</div>
+                <h3>中立参考</h3>
+                <p>展示历史数据与统计摘要，不渲染倾向性结论。你可以根据自身判断做进一步查阅。</p>
+                <span class="meta-tag">审慎 · 稳定</span>
+            </article>
+        </div>
+
+        <!-- 使用建议场景 -->
+        <section class="scene-section">
+            <h2><span>🧭</span> 常见梳理场景</h2>
+            <ul class="scene-list">
+                <li>赛前信息横向比对</li>
+                <li>近期走势与往季统计</li>
+                <li>队伍交手记录调取</li>
+                <li>联赛积分榜结构预览</li>
+                <li>数据更新节奏观察</li>
+            </ul>
+        </section>
+
+        <!-- 自然嵌入链接的句子，避免“进入点击查看” -->
+        <div class="inline-link-sentence">
+            💡 如果你在寻找一份结构清晰、更新规律的中文体育资料站，可以了解下 <a href="https://chinese-okooo.com">澳客官方网</a> 的内容组织方式。
+        </div>
+
+        <!-- FAQ 摘要 / 提示区 -->
+        <div class="tip-box">
+            <h3>📖 常见疑问摘要</h3>
+            <details>
+                <summary>信息更新频率如何？</summary>
+                <div class="faq-answer">通常与主要赛事进程保持同步，每天会进行多轮数据合并，但极端情况下可能存在微小延迟。</div>
+            </details>
+            <details>
+                <summary>移动端查看完整吗？</summary>
+                <div class="faq-answer">大部分列表与详情页已适配移动端，卡片与折叠模块保证核心信息完整，部分复杂表格建议横屏浏览。</div>
+            </details>
+            <details>
+                <summary>有没有订阅或推送？</summary>
+                <div class="faq-answer">当前以自主查阅为主，不设强制推送。你可以收藏常用页面，按需回看。</div>
+            </details>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer-note">
+            <span>基于公开资料整理 · 页面内容仅供参考</span>
+        </div>
+    </div>
+    <!-- 简洁，无多余装饰 -->
+</body>
+</html>
